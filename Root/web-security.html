@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Security - GhostHacker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+</head>
+<body class="bg-gray-900 text-white transition duration-300">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between p-6 bg-gray-800">
+    <h1 class="text-2xl font-bold text-red-500">GhostHacker</h1>
+    <div class="space-x-4">
+      <a href="index.html" class="hover:text-red-400">Home</a>
+      <a href="courses.html" class="hover:text-red-400">Courses</a>
+      <button onclick="toggleTheme()" class="ml-4 bg-red-600 px-3 py-1 rounded hover:bg-red-500 transition">Toggle Theme</button>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="px-6 py-10 text-center">
+    <h2 class="text-4xl font-extrabold text-red-500">Web Security</h2>
+    <p class="mt-2 text-gray-300 italic">Secure your apps and understand how the web can be exploited.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="px-6 py-8 max-w-4xl mx-auto space-y-12">
+
+    <!-- Overview -->
+    <section>
+      <h3 class="text-2xl font-bold text-red-400 mb-2">🔍 Overview</h3>
+      <p class="text-gray-300">
+        Web applications are among the most attacked assets today. In this course, you'll dive into the fundamentals of web security, explore common vulnerabilities, and learn how to exploit and patch them.
+      </p>
+    </section>
+
+    <!-- Table of Contents -->
+    <section>
+      <h3 class="text-2xl font-bold text-red-400 mb-2">📚 Table of Contents</h3>
+      <ul class="list-disc list-inside text-gray-300 space-y-1">
+        <li><a href="#lesson1" class="text-red-400 hover:underline">1. Understanding HTTP & Sessions</a></li>
+        <li><a href="#lesson2" class="text-red-400 hover:underline">2. Cross-Site Scripting (XSS)</a></li>
+        <li><a href="#lesson3" class="text-red-400 hover:underline">3. SQL Injection (SQLi)</a></li>
+        <li><a href="#lesson4" class="text-red-400 hover:underline">4. Cross-Site Request Forgery (CSRF)</a></li>
+        <li><a href="#lesson5" class="text-red-400 hover:underline">5. File Upload Vulnerabilities</a></li>
+        <li><a href="#lesson6" class="text-red-400 hover:underline">6. Authentication and Session Hijacking</a></li>
+      </ul>
+    </section>
+
+    <!-- Lessons -->
+    <section id="lesson1">
+      <h4 class="text-xl font-bold text-red-400 mt-6">1. Understanding HTTP & Sessions</h4>
+      <p class="text-gray-300 mt-2">
+        Learn how the web works: requests, responses, cookies, headers, and session handling.
+        <ul class="list-disc list-inside mt-2">
+          <li>Methods: GET, POST, PUT, DELETE</li>
+          <li>Status Codes: 200, 302, 403, 500</li>
+          <li>Cookies vs LocalStorage vs Tokens</li>
+        </ul>
+      </p>
+    </section>
+
+    <section id="lesson2">
+      <h4 class="text-xl font-bold text-red-400 mt-6">2. Cross-Site Scripting (XSS)</h4>
+      <p class="text-gray-300 mt-2">
+        Inject malicious scripts into web pages viewed by other users.
+        <ul class="list-disc list-inside mt-2">
+          <li>Reflected XSS</li>
+          <li>Stored XSS</li>
+          <li>DOM-based XSS</li>
+        </ul>
+        <p class="mt-2">✅ Use Content Security Policy (CSP) and output encoding to defend.</p>
+      </p>
+    </section>
+
+    <section id="lesson3">
+      <h4 class="text-xl font-bold text-red-400 mt-6">3. SQL Injection (SQLi)</h4>
+      <p class="text-gray-300 mt-2">
+        Tamper with SQL queries to access unauthorized data.
+        <ul class="list-disc list-inside mt-2">
+          <li>`' OR 1=1 --`</li>
+          <li>Blind SQLi vs Error-based SQLi</li>
+          <li>Union-based injection</li>
+        </ul>
+        <p class="mt-2">✅ Always use prepared statements or ORM frameworks to prevent this.</p>
+      </p>
+    </section>
+
+    <section id="lesson4">
+      <h4 class="text-xl font-bold text-red-400 mt-6">4. Cross-Site Request Forgery (CSRF)</h4>
+      <p class="text-gray-300 mt-2">
+        Force a victim’s browser to send requests without their consent.
+        <ul class="list-disc list-inside mt-2">
+          <li>Exploits authenticated sessions</li>
+          <li>Can change passwords, emails, or transfer funds</li>
+        </ul>
+        <p class="mt-2">✅ Use anti-CSRF tokens and SameSite cookies.</p>
+      </p>
+    </section>
+
+    <section id="lesson5">
+      <h4 class="text-xl font-bold text-red-400 mt-6">5. File Upload Vulnerabilities</h4>
+      <p class="text-gray-300 mt-2">
+        Malicious files can lead to RCE (Remote Code Execution).
+        <ul class="list-disc list-inside mt-2">
+          <li>Double extension files: `shell.php.jpg`</li>
+          <li>MIME type spoofing</li>
+          <li>Bypassing client-side validation</li>
+        </ul>
+        <p class="mt-2">✅ Sanitize filenames and restrict executable formats.</p>
+      </p>
+    </section>
+
+    <section id="lesson6">
+      <h4 class="text-xl font-bold text-red-400 mt-6">6. Authentication and Session Hijacking</h4>
+      <p class="text-gray-300 mt-2">
+        Learn how weak auth mechanisms can be exploited.
+        <ul class="list-disc list-inside mt-2">
+          <li>Brute force login attacks</li>
+          <li>Session fixation and stealing</li>
+          <li>JWT manipulation</li>
+        </ul>
+        <p class="mt-2">✅ Enforce strong passwords, 2FA, and secure cookies.</p>
+      </p>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <div class="mt-12 flex justify-between">
+      <a href="linux-for-hackers.html" class="bg-red-600 px-4 py-2 rounded hover:bg-red-500">← Back: Linux for Hackers</a>
+      <a href="ctf-bootcamp.html" class="bg-red-600 px-4 py-2 rounded hover:bg-red-500">Next: CTF Bootcamp →</a>
+    </div>
+
+  </main>
+
+  <footer class="text-center py-6 border-t border-gray-700 mt-10">
+    <p class="text-sm text-gray-500">&copy; 2025 GhostHacker. Learn, think, and hack responsibly.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      document.body.classList.toggle('bg-gray-900');
+      document.body.classList.toggle('text-white');
+      document.body.classList.toggle('bg-white');
+      document.body.classList.toggle('text-gray-900');
+    }
+  </script>
+</body>
+</html>
